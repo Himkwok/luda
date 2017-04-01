@@ -45,7 +45,8 @@ from werkzeug.routing import Rule
 
 urlpatterns = [
     Rule('/', endpoint='index'),
-    Rule('/widgets',endpoint='widgets')
+    Rule('/widgets',endpoint='widgets'),
+    Rule('/applications',endpoint='applications')
 ]
 
 for rule in urlpatterns:
