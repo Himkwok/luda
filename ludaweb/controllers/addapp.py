@@ -10,3 +10,8 @@ def index():
 @app.endpoint('addapplications')
 def add():
     return render_template('applications_add.html')
+
+
+@app.endpoint('saveapplications')
+def save():
+    return "save"

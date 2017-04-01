@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 __version__ = '0.1'
 from flask import Flask
+
 app = Flask('project')
 app.debug = True
 
@@ -9,7 +10,6 @@ from ludaweb.controllers import *
 
 # import model
 from ludaweb.models.models import db
-
 
 #### initial logger ####
 import logging
@@ -29,8 +29,9 @@ app.logger.addHandler(handler)
 
 #### initial sesion ####
 from datetime import timedelta
+
 app.config['SECRET_KEY'] = 'random'
-app.permanent_session_lifetime = timedelta(seconds=60*60*10)  # session expire time
+app.permanent_session_lifetime = timedelta(seconds=60 * 60 * 10)  # session expire time
 #### initial sesion ####
 
 
@@ -45,11 +46,12 @@ from werkzeug.routing import Rule
 
 urlpatterns = [
     Rule('/', endpoint='index'),
-    Rule('/widgets',endpoint='widgets'),
-    Rule('/applications',endpoint='applications'),
-    Rule('/applications/add',endpoint='addapplications')
+    Rule('/widgets', endpoint='widgets'),
+    Rule('/applications', endpoint='applications'),
+    Rule('/applications/add', endpoint='addapplications'),
+    Rule('/applications/save', endpoint='saveapplications'),
 ]
 
 for rule in urlpatterns:
     app.url_map.add(rule)
-#### router ####
+    #### router ####

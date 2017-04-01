@@ -1,0 +1,10 @@
+from ludaweb.models.models import db
+
+
+class Application(db.Model):
+    __tablename__ = 'applications'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    appId = db.Column(db.String(255), nullable=False)
+    appName = db.Column(db.String(255), nullable=False)
+    url = db.Column(db.String(255), nullable=False)

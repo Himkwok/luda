@@ -45,6 +45,16 @@
             $('#addparambutton').css("display", "block");
         }
     }
+    function saveApps() {
+        $.ajax({
+            url: "save", context: null, data: {
+                name: 'yang', age: 25
+            },
+            success: function () {
+                alert('success');
+            }
+        });
+    }
 </script>
 
 {% endblock %}
@@ -138,8 +148,8 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-                <button type="submit" class="btn btn-default">返回</button>
-                <button type="submit" class="btn btn-info pull-right">保存</button>
+                <button type="button" class="btn btn-default">返回</button>
+                <button type="button" class="btn btn-info pull-right" onclick="saveApps()">保存</button>
             </div>
             <!-- /.box-footer -->
 
