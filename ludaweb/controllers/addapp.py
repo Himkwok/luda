@@ -5,3 +5,8 @@ from flask import Flask, request, session, url_for, redirect, render_template, a
 @app.endpoint('applications')
 def index():
     return render_template('applications.html')
+
+
+@app.endpoint('addapplications')
+def add():
+    return render_template('applications_add.html')
