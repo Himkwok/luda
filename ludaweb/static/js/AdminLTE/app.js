@@ -173,7 +173,7 @@ $(function() {
             + "<div class='form-group no-margin'>"
             + "<div class='.radio'>"
             + "<label>"
-            + "<input name='skins' type='radio' onchange='change_skin(\"skin-blue\");'/> "
+            + "<input name='skins' type='radio' onchange='change_skin(\"skin-blue\");' checked='checked'/> "
             + "Blue"
             + "</label>"
             + "</div>"

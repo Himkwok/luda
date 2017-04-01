@@ -35,7 +35,7 @@
         $('<div class="form-group" id="addArgTempl"><label for="argName" class="col-sm-2 control-label">参数名</label><div class="col-sm-3"><input type="text" class="form-control" id="argName" name="argName" placeholder="参数名"/></div><div class="  col-sm-2"><div class="checkbox"><label><input type="checkbox"> 必填</label></div></div><div class="  col-sm-1"><div class="checkbox"><a href="javascript:void(0)" onclick="removeParam(this)">[删除]</a></div></div><div class="  col-sm-1"><div class="checkbox"><a href="javascript:void(0)" onclick="addParam(this)">[增加]</a></div></div></div>').clone().appendTo($('#appForm'));
         if ($('input[name="argName"]').val() != undefined) {
 
-            $('#addparambutton').css("display", "none");
+            //$('#addparambutton').css("display", "none");
         }
     }
     function removeParam(link) {
@@ -105,13 +105,13 @@
                     </div>
                 </div>
 
-                <div class="form-group" id="addArgTempl">
+                <!--<div class="form-group" id="addArgTempl">
                     <label for="argName" class="col-sm-2 control-label">参数名</label>
                     <div class="col-sm-3">
                         <input type="text" class="form-control" id="argName" name="argName" placeholder="参数名"/>
                     </div>
-                    <div class="  col-sm-2">
-                        <div class="checkbox">
+                    <div class="col-sm-2">
+                        <div >
                             <label>
                                 <input type="checkbox"> 必填
                             </label>
@@ -127,9 +127,9 @@
                             <a href="javascript:void(0)" onclick="addParam(this)">[增加]</a>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <div class="form-group">
-                    <div id="addparambutton" style="display: none;" class="col-sm-7">
+                    <div id="addparambutton" style="display: block;" class="col-sm-6">
                         <div>
                             <button type="button" onclick="addParam()" class="btn btn-warning pull-right">增加参数</button>
                         </div>
