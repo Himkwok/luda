@@ -7,4 +7,11 @@ class Application(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     appId = db.Column(db.String(255), nullable=False)
     appName = db.Column(db.String(255), nullable=False)
+    appDes = db.Column(db.String(255), nullable=False)
     url = db.Column(db.String(255), nullable=False)
+    xybz = db.Column(db.Integer(), nullable=False)
+
+    args = db.relationship('Param', backref='applications')
+
+    def __repr__(self):
+        return '<Application %r>' % self.appName

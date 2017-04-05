@@ -47,18 +47,19 @@
     }
     function saveApps() {
         $.ajax({
-            url: "save", context: null, data: {
-                name: 'yang', age: 25
-            },
-            success: function () {
-                alert('success');
+            url: "save", type:'POST', context: null, data: $('.form-horizontal').serializeArray(),
+            success: function (d) {
+                if (d == "fail") {
+                    alert('保存失败!');
+                } else {
+                    alert('保存成功!');
+                }
+                $('.form-horizontal')[0].reset()
             }
         });
     }
 </script>
-
 {% endblock %}
-
 {% block content_header %}
 <section class="content-header">
     <h1>
