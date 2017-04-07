@@ -1,9 +1,20 @@
 # -*- coding: utf-8 -*-
+from ludaweb.api.apps import App
+from ludaweb.api.capture import Capture
+
 __version__ = '0.1'
 from flask import Flask
+from flask_restful import Api, Resource
+from celery import Celery
 
 app = Flask('ludaWeb')
 app.debug = True
+
+# app.config['CELERY_BROKER_URL'] = 'redis://47.92.37.219:6379/0'
+# app.config['CELERY_RESULT_BACKEND'] = 'redis://47.92.37.219:6379/0'
+#
+# celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
+# celery.conf.update(app.config)
 
 # import controllers
 from ludaweb.controllers import *
@@ -36,7 +47,9 @@ app.permanent_session_lifetime = timedelta(seconds=60 * 60 * 10)  # session expi
 
 
 #### initial database ####
-app.config.from_pyfile('config/database.cfg')
+APP_ROOT = os.path.dirname(os.path.realpath(__file__))
+
+app.config.from_pyfile(os.path.join(APP_ROOT, 'config') + '/database.cfg')
 db.init_app(app)
 #### initial database ####
 
@@ -50,8 +63,12 @@ urlpatterns = [
     Rule('/applications', endpoint='applications'),
     Rule('/applications/add', endpoint='addapplications'),
     Rule('/applications/save', endpoint='saveapplications'),
+    Rule('/qstb/<int:id>', endpoint='qstb'),
 ]
+api = Api(app)
+api.add_resource(App, '/api/applications')
+api.add_resource(Capture, '/api/capture')
 
 for rule in urlpatterns:
     app.url_map.add(rule)
-    #### router ####
+#### router ####

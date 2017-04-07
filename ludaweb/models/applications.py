@@ -15,3 +15,13 @@ class Application(db.Model):
 
     def __repr__(self):
         return '<Application %r>' % self.appName
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'appId': self.appId,
+            'appName':  self.appName,
+            'appDes': self.appDes,
+            'url': self.url,
+            'xybz': self.xybz,
+        }

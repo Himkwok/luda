@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+
 from ludaweb import app
 
 if __name__ == '__main__':
