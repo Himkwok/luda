@@ -1,0 +1,47 @@
+/*******************************reset*********************/
+*{margin:0;padding:0;}
+body{ font-size:12px;color:#333;font-family:simsun;}
+a{text-decoration:none;color:#333;cursor:pointer}
+a:hover{text-decoration:none;}
+input{border:0; background:none;}
+.clear{clear:both;}
+.left{text-align:left;padding-left:10px;}
+.right{text-align:right;padding-right:10px;}
+.center{text-align:center;}
+b,strong{font-weight:lighter;}
+ul,li{list-style-type:none;}
+/**************************table**************************/
+
+/**
+.table_warpper{padding:35px;}
+**/
+.table_warpper h2{text-align:center;padding-bottom:20px;font-weight:bold;font-size:16px;}
+table{border-right:1px solid #5d5d5d;border-top:1px solid #5d5d5d;margin:0 auto}
+tr{cursor:pointer;}
+th,td{border-left:1px solid #5d5d5d;border-bottom:1px solid #5d5d5d;}
+th{background:#cdcdcd;color:#333;text-align:center;height:35px;padding:0 6px;}
+td{vertical-align:middle;height:26px;}
+b{padding-left:24px;}
+strong{padding-left:48px;}
+td input.nobg{background:#eee;width:100%;padding-right:0;text-align:center;}
+td input.del_WH{width:auto;height:auto;margin:8px; vertical-align:middle;}
+td label{padding-left:8px;}
+
+td>input{font-size:12px;text-align:right;width:94%;padding-right:5%;color:#333;height:26px;line-height:26px;}
+span{color:#3977cc;cursor:pointer;}
+td.mean{word-break:break-all;white-space:nowrap;height:auto;padding:10px;line-height:1.8;word-wrap:break-word}
+/**********************tablelist******************************/
+.table_list i{font-size:10px; font-style:normal;}
+.c_color{background:#297990;color:#fff;}
+textarea{overflow:hidden;}
+table li{text-indent:18px;}
+
+/****************table-list-test********************************************/
+.add_del_btn{width:110px;background:#585757;padding:10px;padding-top:0; _margin-top:76px;z-index:999;}
+.add_del_btn a{display:block;margin-top:10px;height:40px;color:#585757;background:#fff;width:100%;text-align:center;line-height:40px;font-size:16px;}
+.add_del_btn a:hover{background:#c9e6ef;font-weight:bold;}
+.css2{}
+
+td.h_col{background:#fff;}
+
+.selTd{border:2px dashed red}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全市通办</title>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <!--<link href="{{ url_for('static', filename='css/table.css') }}" rel="stylesheet" type="text/css"/>-->
+
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='eleme/index.css') }}">
+    <!-- 引入组件库 -->
+    <!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+    <meta name="viewport" content="width=500, initial-scale=1.0">
+</head>
+<body style="background-color: white">
+<div class="el-table el-table--fit el-table--striped el-table--enable-row-hover el-table--enable-row-transition"
+     style="width: 100%;">
+    <div class="el-table__header-wrapper">
+        <table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 100%;">
+            <thead>
+            <tr>
+                <th colspan="1" rowspan="1" class="el-table_1_column_4 is-leaf">
+                    <div class="cell">纳税人主管分局</div>
+                </th>
+                <th colspan="1" rowspan="1" class="el-table_1_column_5 is-leaf">
+                    <div class="cell">预约受理分局名称</div>
+                </th>
+                <th colspan="1" rowspan="1" class="el-table_1_column_6 is-leaf">
+                    <div class="cell">预约时间</div>
+                </th>
+                <th colspan="1" rowspan="1" class="el-table_1_column_5 is-leaf">
+                    <div class="cell">就近取票合计</div>
+                </th>
+                <th colspan="1" rowspan="1" class="el-table_1_column_6 is-leaf">
+                    <div class="cell">其它合计</div>
+                </th>
+                <th class="gutter" style="width: 0px;"></th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="el-table__body-wrapper">
+        <table cellspacing="0" cellpadding="0" border="0" class="el-table__body" style="width: 100%;">
+
+            <tbody>
+            {% for data in datalist %}
+            <tr class="">
+                <td class="el-table_1_column_4">
+                    <div class="cell">{{data.nsrzgfjmc}}</div>
+                </td>
+                <td class="el-table_1_column_5">
+                    <div class="cell">{{data.yyslfjmc}}</div>
+                </td>
+                <td class="el-table_1_column_6">
+                    <div class="cell">{{data.yysj}}</div>
+                </td>
+                <td class="el-table_1_column_6">
+                    <div class="cell">{{data.jjqphj}}</div>
+                </td>
+                <td class="el-table_1_column_6">
+                    <div class="cell">{{data.qthj}}</div>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table><!----></div><!----><!----><!---->
+    <div class="el-table__column-resize-proxy" style="display: none;"></div>
+    <div class="resize-triggers">
+        <div class="expand-trigger">
+            <div style="width: 685px; height: 201px;"></div>
+        </div>
+        <div class="contract-trigger"></div>
+    </div>
+</div>
+</body>
+</html>
