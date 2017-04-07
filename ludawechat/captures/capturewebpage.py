@@ -16,6 +16,7 @@ SCRIPT = os.path.join(APP_ROOT, 'screenshot.js')
 
 
 class DoCapture(object):
+    '''截图'''
     def do_capture(url):
         # print(url)
         url_hash = str(uuid.uuid4())  # hashlib.md5(url.encode()).hexdigest()

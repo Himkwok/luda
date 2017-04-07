@@ -19,7 +19,6 @@ class Luda(object):
     def __init__(self, api_key=None):
         self.session = requests.Session()
         enhance_connection(self.session)
-
         # noinspection SpellCheckingInspection
         self.api_key = api_key or '7c8cdb56b0dc4450a8deef30a496bd4c'
         self.last_member = dict()
@@ -63,27 +62,6 @@ class Luda(object):
                     ret += '@{} '.format(msg.member.name)
 
             code = -1
-            # if answer: #answer 为截图位置
-            #     code = answer.get('code', -1)
-            #
-            # if code >= 100000:
-            #     text = answer.get('text')
-            #     if not text or (text == msg.text and len(text) > 3):
-            #         text = next_topic()
-            #     url = answer.get('url')
-            #     items = answer.get('list', list())
-            #
-            #     ret += str(text)
-            #     if url:
-            #         ret += '\n{}'.format(url)
-            #     for item in items:
-            #         ret += '\n\n{}\n{}'.format(
-            #             item.get('article') or item.get('name'),
-            #             item.get('detailurl')
-            #         )
-            #
-            # else:
-            #     ret += next_topic()
             r = DoCapture.do_capture('http://127.0.0.1:9001/qstb/3')  # self.session.post(self.url, json=payload)
             # print(ret)
             return [ret, r]

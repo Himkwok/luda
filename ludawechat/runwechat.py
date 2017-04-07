@@ -31,17 +31,7 @@ for app in r.json():
     jieba.suggest_freq((app['appName']), True)
     # print(x['appName'])
 
-ludareply = Luda(api_key='7c8cdb56b0dc4450a8deef30a496bd4c')
-
-
-# @bot.register(me)
-# def reply_my_friend(msg):
-#     seg_list = jieba.cut(msg.text, cut_all=False)
-#     for x in r.json():
-#         if x['appName'] in list(seg_list):
-#
-#
-#             # return ret[0]
+ludareply = Luda()
 
 
 # 只监控指定群
