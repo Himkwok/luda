@@ -3,10 +3,21 @@ luda = 鲁达
 
 nginx+gunicorn+flask+mysql
 
+### ludaweb
 
-本地运行 python runserver.py
+ludaweb 本地运行 python runserver.py
 
-###生产环境
+### ludawechat
+
+基于 [wxpy](https://github.com/youfou/wxpy)  和 [PhantomJS](http://phantomjs.org/)
+
+PhantomJS主要用于截取屏幕并通过微信发送图片
+
+
+
+
+
+### 生产环境
 
 启动 supervisorctl -c supervisor.conf start all
 
