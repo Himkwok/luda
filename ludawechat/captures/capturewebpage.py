@@ -6,17 +6,22 @@ import os
 import subprocess
 import uuid
 
+import configparser
+
 APP_ROOT = os.path.dirname(os.path.realpath(__file__))
 MEDIA_ROOT = os.path.join(APP_ROOT, 'static')
 MEDIA_URL = '/static/'
+# 读取配置文件
+cf = configparser.ConfigParser()
+cf.read('config/wechat.cfg')
 
-PASSWORD = 'shh'
-PHANTOM = 'D:\\phantomjs-2.1.1-windows\\bin\\phantomjs'
+PHANTOM = cf.get('WECHAT_CONFIG', 'PHANTOM')
 SCRIPT = os.path.join(APP_ROOT, 'screenshot.js')
 
 
 class DoCapture(object):
     '''访问URL并截取屏幕保存'''
+
     def do_capture(url):
         # print(url)
         url_hash = str(uuid.uuid4())  # hashlib.md5(url.encode()).hexdigest()

@@ -1,3 +1,4 @@
+import configparser
 import logging
 import pprint
 import random
@@ -13,8 +14,12 @@ logger = logging.getLogger(__name__)
 
 class Luda(object):
     '''luda 回复'''
-
     url = ''
+
+    # 读取配置文件
+    cf = configparser.ConfigParser()
+    cf.read('config/wechat.cfg')
+    remoteweb = cf.get('WECHAT_CONFIG', 'ROMOTE_WEB')
 
     def __init__(self, api_key=None):
         self.session = requests.Session()
@@ -62,7 +67,7 @@ class Luda(object):
                     ret += '@{} '.format(msg.member.name)
 
             code = -1
-            r = DoCapture.do_capture('http://127.0.0.1:9001/qstb/3')  # self.session.post(self.url, json=payload)
+            r = DoCapture.do_capture(self.remoteweb +'/qstb/3')  # self.session.post(self.url, json=payload)
             # print(ret)
             return [ret, r]
 
@@ -133,7 +138,7 @@ class Luda(object):
 
         # noinspection PyBroadException
         try:
-            r = DoCapture.do_capture('http://127.0.0.1:9001/qstb/3')  # self.session.post(self.url, json=payload)
+            r = DoCapture.do_capture(self.remoteweb + '/qstb/3')  # self.session.post(self.url, json=payload)
             answer = r
         except:
             answer = None
