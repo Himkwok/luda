@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from ludaweb.api.apps import App
-from ludaweb.api.capture import Capture
 
 __version__ = '0.1'
 from flask import Flask
@@ -64,10 +63,10 @@ urlpatterns = [
     Rule('/applications/add', endpoint='addapplications'),
     Rule('/applications/save', endpoint='saveapplications'),
     Rule('/qstb/<int:id>', endpoint='qstb'),
+    Rule('/mps/webhook', endpoint='webhook', methods=['GET', 'POST']),
 ]
 api = Api(app)
 api.add_resource(App, '/api/applications')
-api.add_resource(Capture, '/api/capture')
 
 for rule in urlpatterns:
     app.url_map.add(rule)
